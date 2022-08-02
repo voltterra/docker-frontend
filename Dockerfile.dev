@@ -16,7 +16,3 @@ CMD ["npm", "run", "start"]
 
 # 2nd stage is called differently 
 FROM base as build
-
-RUN npm run build
-
-CMD ["nginx", "start"]

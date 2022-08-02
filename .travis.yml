@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build --tag voltterra/docker-frontend -f Dockerfile.dev --target base .
+  - docker --version
+  - docker images
+
+script:
+  - docker run voltterra/docker-frontend npm run test -- --watchAll=false
